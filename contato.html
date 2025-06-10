@@ -57,26 +57,30 @@
                 </select>
 
                 <span id="contatoError" class="error-message"></span>
-                 <textarea
+                <textarea
                     name="mensagem"
                     id="mensagem"
                     placeholder="digite sua mensagem" 
                     class="fordform" 
                     rows="500"
-               ></textarea>
+                ></textarea>
                 <span id="mensagemError" class="error-message"></span>
-                <p>Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados.</p>
-                <label>
-                     <input type="checkbox" id="checkbox1">
-                     Sim. Li e concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">Termos e Condições</a>.
-                </label>
 
-                <label>
-                <input type="checkbox" id="checkbox2">
-                     Sim. Também quero receber descontos e novidades.
-                </label>
+                <div class="consentimento">
+                    <p>Os dados serão mantidos em nossa base de dados, só enquanto for desejado por você. A qualquer momento, será possível editar ou remover tais dados.</p>
+                    <label>
+                        <input type="checkbox" id="checkbox1">
+                        Sim. Li e concordo com os <a href="https://www.ford.com.br/politica-de-privacidade/" target="_blank">Termos e Condições</a>.
+                    </label>
 
-                <button id="enviar" disabled>Enviar</button>
+                    <label>
+                        <input type="checkbox" id="checkbox2">
+                        Sim. Também quero receber descontos e novidades.
+                    </label>
+                    
+                </div>
+               <button  id="enviar" disabled>Enviar</button>
+               
             </form>
             </div>
         </div>
@@ -94,7 +98,15 @@
            <img src="img/ford-96.png" width="70"  />
         </div>
     </footer> 
-    
+    <script>
+        const checkbox1 = document.getElementById("checkbox1");
+        const botao = document.getElementById("enviar");
+
+        checkbox1.addEventListener("change", () => {
+        botao.disabled = !checkbox1.checked;
+        });
+</script>
+
     <script src="js/form.js" defer></script>
 </body>
 </html>
